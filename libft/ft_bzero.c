@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 12:38:18 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 14:38:58 by bboisset         ###   ########.fr       */
+/*   Created: 2019/10/09 15:17:55 by bboisset          #+#    #+#             */
+/*   Updated: 2019/10/09 15:24:24 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
 	int i;
+	char *m;
 
+	m = (char*)s;
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while (i < n)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] > s2[i]) ? 1 : -1;
-		i++;
+		m[i++] = '\0';
 	}
-	if (s1[i] == s2[i] || (s1[i] == '\0' || s2[i] == '\0' && i < n))
-		return (0);
-	return (s1[i] > s2[i]) ? 1 : -1;
+	return (s);
 }

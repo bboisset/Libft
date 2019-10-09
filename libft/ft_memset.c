@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 12:38:18 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 14:38:58 by bboisset         ###   ########.fr       */
+/*   Created: 2019/10/09 14:45:29 by bboisset          #+#    #+#             */
+/*   Updated: 2019/10/09 15:25:20 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	int i;
+	char *m;
 
+	m = (char*)b;
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	while (i < len)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] > s2[i]) ? 1 : -1;
-		i++;
+		m[i++] = c;
 	}
-	if (s1[i] == s2[i] || (s1[i] == '\0' || s2[i] == '\0' && i < n))
-		return (0);
-	return (s1[i] > s2[i]) ? 1 : -1;
+	return (b);
 }

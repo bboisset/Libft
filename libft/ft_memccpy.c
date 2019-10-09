@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 12:38:18 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 14:38:58 by bboisset         ###   ########.fr       */
+/*   Created: 2019/10/09 15:25:58 by bboisset          #+#    #+#             */
+/*   Updated: 2019/10/09 16:00:30 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	int i;
+	char *m;
+	char *l;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
+	m = (char*)dst;
+	l = (char*)src;
+	while (i < n)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] > s2[i]) ? 1 : -1;
-		i++;
+		m[i] = l[i];
+		if (l[i++] == c)
+			return (dst);
 	}
-	if (s1[i] == s2[i] || (s1[i] == '\0' || s2[i] == '\0' && i < n))
-		return (0);
-	return (s1[i] > s2[i]) ? 1 : -1;
+	return (dst);
 }

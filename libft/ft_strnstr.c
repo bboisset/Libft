@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 12:19:13 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 12:37:33 by bboisset         ###   ########.fr       */
+/*   Created: 2019/10/10 14:30:41 by bboisset          #+#    #+#             */
+/*   Updated: 2019/10/10 14:43:17 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-void *ft_calloc(size_t count, size_t size)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    int *x;
-    x = malloc(count*size);
-    if (!x)
-        return (0);
-    ft_memset(x, '\0', count*size);
-    return (x);
+	int i;
+	int needleLength;
+
+	i = 0;
+	needleLength = ft_strlen(needle);
+	if(!needleLength)
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
+	{
+		if (haystack[i] == needle[0])
+			if (ft_strncmp(&haystack[i], &needle[0], needleLength) == 0)
+				return ((char *)&haystack[i]);
+		i++;
+	}
+	return (0);
 }

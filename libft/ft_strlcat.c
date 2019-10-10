@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 12:19:13 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 12:37:33 by bboisset         ###   ########.fr       */
+/*   Created: 2019/10/10 14:04:23 by bboisset          #+#    #+#             */
+/*   Updated: 2019/10/10 14:29:43 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-void *ft_calloc(size_t count, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    int *x;
-    x = malloc(count*size);
-    if (!x)
-        return (0);
-    ft_memset(x, '\0', count*size);
-    return (x);
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (dst[i] != '\0')
+		i++;
+	while (src[j] != '\0' && j < dstsize - 1)
+		dst[i++] = src[j++];
+	dst[i] = '\0';
 }

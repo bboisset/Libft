@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 12:19:13 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 12:37:33 by bboisset         ###   ########.fr       */
+/*   Created: 2019/10/10 18:45:42 by bboisset          #+#    #+#             */
+/*   Updated: 2019/10/10 18:56:33 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-void *ft_calloc(size_t count, size_t size)
+char  *strdup(const char *s1)
 {
-    int *x;
-    x = malloc(count*size);
-    if (!x)
-        return (0);
-    ft_memset(x, '\0', count*size);
-    return (x);
+  int str_length;
+  char *str2;
+  int i;
+
+  str_length = ft_strlen(s1);
+  str2 = ft_calloc(str_length + 1, sizeof(char));
+  if (!str2)
+    return (0);
+  i = 0;
+  while (i <= str_length)
+    str2[i] = s1[i++];
+  return (str2);
 }

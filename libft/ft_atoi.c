@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 12:19:13 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 12:37:33 by bboisset         ###   ########.fr       */
+/*   Created: 2019/10/10 17:17:00 by bboisset          #+#    #+#             */
+/*   Updated: 2019/10/10 17:17:04 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 
-void *ft_calloc(size_t count, size_t size)
+int ft_atoi(const char *str)
 {
-    int *x;
-    x = malloc(count*size);
-    if (!x)
-        return (0);
-    ft_memset(x, '\0', count*size);
-    return (x);
+  int i;
+  int negative;
+  int number;
+
+  i = 0;
+  negative = 0;
+  number = 0;
+  while (!ft_isprint(str[i]))
+    i++;
+  if (str[i] == '-')
+  {
+    negative = 1;
+    i++;
+  }
+  while(ft_isdigit(str[i]) && str[i] != '\0')
+    number = number * 10 + (str[i++] - '0');
+  if (negative)
+    number *= -1;
+  return (number);
 }

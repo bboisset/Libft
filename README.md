@@ -5,3 +5,4 @@ strncmp marche avec "test\200" en premier arg et "test\0" avec en size 6 | cast 
 free avant de return (split)
 ft_strrchr check
 règle clean
+strlcat est faux

@@ -6,19 +6,23 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:19:13 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 12:37:33 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:26:48 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-void *ft_calloc(size_t count, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-    int *x;
-    x = malloc(count*size);
-    if (!x)
-        return (0);
-    ft_memset(x, '\0', count*size);
-    return (x);
+	int		i;
+	char	*stock;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			stock = &s[i];
+		i++;
+	}
+	if (stock)
+		return (stock);
+	return (0);
 }

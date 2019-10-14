@@ -6,11 +6,11 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:30:50 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/08 14:55:39 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:24:19 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c)) ? 1 : 0;
 }

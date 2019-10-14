@@ -6,11 +6,11 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:56:48 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/08 15:01:17 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:45:42 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 177) ? 1 : 0;
 }

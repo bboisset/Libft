@@ -6,15 +6,15 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 16:41:17 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 18:31:07 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:40:28 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int i;
-	char *m;
-	char *l;
+	int		i;
+	char	*m;
+	char	*l;
 
 	i = 0;
 	m = (char*)dst;

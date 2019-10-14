@@ -6,11 +6,11 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:19:11 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/08 15:24:21 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:45:12 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	return (c >= 'A' && c <= 'Z') ? c + 32 : c;
 }

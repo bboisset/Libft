@@ -6,25 +6,25 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:42:51 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/11 13:11:34 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:42:46 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char  *ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int j;
-	static int data[2] = {0};
-	char *str;
+	int			i;
+	int			j;
+	static int	data[2] = {0};
+	char		*str;
 
 	i = 0;
 	j = 0;
 	data = ft_memset(data, '0', 2);
-	while (is_in_set(s1[i + data[0]],set))
+	while (is_in_set(s1[i + data[0]], set))
 		data[0]++;
-	while (s1[i+data[0]] != '\0')
+	while (s1[i + data[0]] != '\0')
 		i++;
-	while (is_in_set(s1[(i -1 ) + data[0] - data[1]],set))
+	while (is_in_set(s1[(i - 1) + data[0] - data[1]], set))
 		data[1]++;
 	if (!(str = ft_calloc(i - data[0], sizeof(char))))
 		return (0);
@@ -33,7 +33,7 @@ char  *ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-int is_in_set(char c,char const *set)
+static int	is_in_set(char c, char const *set)
 {
 	int i;
 

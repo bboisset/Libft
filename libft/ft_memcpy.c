@@ -6,15 +6,15 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:25:58 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/09 15:47:48 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 17:52:26 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int i;
-	char *m;
-	char *l;
+	int		i;
+	char	*m;
+	char	*l;
 
 	i = 0;
 	m = (char*)dst;

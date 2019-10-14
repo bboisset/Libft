@@ -6,13 +6,15 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:45:29 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:51:50 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 19:39:16 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memset(void *b, int c, size_t len)
 {
-	int		i;
+	size_t		i;
 	char	*m;
 
 	m = (char*)b;

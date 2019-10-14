@@ -6,13 +6,15 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:25:58 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:53:16 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 19:40:56 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*m;
 	char	*l;
 

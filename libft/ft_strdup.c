@@ -6,9 +6,11 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 18:45:42 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:39:03 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:05:31 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {
@@ -22,6 +24,9 @@ char	*ft_strdup(const char *s1)
 		return (0);
 	i = 0;
 	while (i <= str_length)
-		str2[i] = s1[i++];
+	{
+		str2[i] = s1[i];
+		i++;
+	}
 	return (str2);
 }

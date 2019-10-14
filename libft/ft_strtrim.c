@@ -6,9 +6,22 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:42:51 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:42:46 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:08:33 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+static int	is_in_set(char c, char const *set)
+{
+	int i;
+
+	i = 0;
+	while (set[i] != '\0')
+		if (c == set[i++])
+			return (1);
+	return (0);
+}
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
@@ -29,17 +42,9 @@ char		*ft_strtrim(char const *s1, char const *set)
 	if (!(str = ft_calloc(i - data[0], sizeof(char))))
 		return (0);
 	while (j < i - data[0] - 1)
-		str[j] = s1[j++ + data[0]];
+	{
+		str[j] = s1[j + data[0]];
+		j++;
+	}
 	return (str);
-}
-
-static int	is_in_set(char c, char const *set)
-{
-	int i;
-
-	i = 0;
-	while (set[i] != '\0')
-		if (c == set[i++])
-			return (1);
-	return (0);
 }

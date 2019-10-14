@@ -6,16 +6,18 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:07:30 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 16:47:53 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:14:55 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str2;
-	int		i;
+	size_t	i;
 	int		j;
-	int		max;
+	size_t	max;
 
 	max = (len > ft_strlen(s) + 1) ? ft_strlen(s) + 1 : len;
 	str2 = ft_calloc(max, sizeof(char));

@@ -6,14 +6,16 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:04:23 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/10 14:29:43 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:04:59 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;

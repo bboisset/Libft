@@ -6,13 +6,15 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:30:41 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:48:17 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 19:42:39 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
+	size_t i;
 	int needle_length;
 
 	i = 0;

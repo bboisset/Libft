@@ -6,11 +6,40 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:12:23 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:33:45 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:10:19 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	**ft_split(char const *s, char c)
+#include "libft.h"
+
+static int		count_occurences(char const *str, char c)
+{
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
+		if (str[i++] == c)
+			count++;
+	return (count);
+}
+
+static int		ft_strcpy(char *dst, char const *src, size_t max)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\0' && i < max)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (i);
+}
+
+char			**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -37,28 +66,4 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	return (array);
-}
-
-int		ft_strcpy(char *dst, char const *src, size_t max)
-{
-	int i;
-
-	i = 0;
-	while (src[i] != '\0' && i < max)
-		dst[i] = src[i++];
-	dst[i] = '\0';
-	return (dst);
-}
-
-int		count_occurences(char const *str, char c)
-{
-	int i;
-	int count;
-
-	i = 0;
-	count = 0;
-	while (str[i] != '\0')
-		if (str[i++] == c)
-			count++;
-	return (count);
 }

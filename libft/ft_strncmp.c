@@ -6,13 +6,15 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:38:18 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/10 15:20:48 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:03:20 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)

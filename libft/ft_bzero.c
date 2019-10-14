@@ -6,13 +6,15 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:17:55 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 16:59:57 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 19:39:48 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_bzero(void *s, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*m;
 
 	m = (char*)s;

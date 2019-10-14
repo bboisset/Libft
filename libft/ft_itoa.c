@@ -6,9 +6,31 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:27:31 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:03:40 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 19:47:35 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+static int	ft_number_length(int nb)
+{
+	int		length;
+
+	length = 0;
+	if (nb == 0)
+		return (1);
+	else if (nb < 0)
+	{
+		nb *= -1;
+		length++;
+	}
+	while (nb > 0)
+	{
+		nb /= 10;
+		length++;
+	}
+	return (length);
+}
 
 char		*ft_itoa(int n)
 {
@@ -37,24 +59,4 @@ char		*ft_itoa(int n)
 		n /= 10;
 	}
 	return (str);
-}
-
-static int	ft_number_length(int nb)
-{
-	int		length;
-
-	length = 0;
-	if (nb == 0)
-		return (1);
-	else if (nb < 0)
-	{
-		nb *= -1;
-		length++;
-	}
-	while (nb > 0)
-	{
-		nb /= 10;
-		length++;
-	}
-	return (length);
 }

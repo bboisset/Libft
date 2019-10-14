@@ -6,11 +6,13 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 17:51:14 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 17:51:20 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/14 20:18:03 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putchar_fd(ft_atoi(n), fd);
+	ft_putchar_fd(*ft_itoa(n), fd);
 }

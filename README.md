@@ -6,3 +6,4 @@ free avant de return (split)
 ft_strrchr check
 règle clean
 strlcat est faux
+check ft_itoa ft_punbr_fd

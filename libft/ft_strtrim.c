@@ -14,37 +14,40 @@
 
 static int	is_in_set(char c, char const *set)
 {
-	int i;
+		int i;
 
-	i = 0;
-	while (set[i] != '\0')
-		if (c == set[i++])
-			return (1);
-	return (0);
+		i = 0;
+		while (set[i] != '\0')
+				if (c == set[i++])
+						return (1);
+		return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char        *ft_strtrim(char const *s1, char const *set)
 {
-	int			i;
-	int			j;
-	static int	data[2] = {0};
-	char		*str;
+		int		i;
+		int		j;
+		int		to_rm;
+		char	*str;
 
-	i = 0;
-	j = 0;
-	data = ft_memset(data, '0', 2);
-	while (is_in_set(s1[i + data[0]], set))
-		data[0]++;
-	while (s1[i + data[0]] != '\0')
-		i++;
-	while (is_in_set(s1[(i - 1) + data[0] - data[1]], set))
-		data[1]++;
-	if (!(str = ft_calloc(i - data[0], sizeof(char))))
-		return (0);
-	while (j < i - data[0] - 1)
-	{
-		str[j] = s1[j + data[0]];
-		j++;
-	}
-	return (str);
+		i = 0;
+		j = 0;
+		to_rm = 0;
+		while (is_in_set(s1[i + to_rm], set))
+				to_rm++;
+		while (s1[i] != '\0')
+				i++;
+		while (is_in_set(s1[i - 1], set))
+				i--;
+		j = i - to_rm ;
+		str = ft_calloc(j + 1, sizeof(char));
+		j--;
+		i--;
+		while (j + 1 > 0)
+		{
+				str[j] = s1[i];
+				j--;
+				i--;
+		}
+		return (str);
 }

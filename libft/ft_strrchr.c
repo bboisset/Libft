@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			stock = &s[i];
+			stock = (char *)&s[i];
 		i++;
 	}
 	if (stock)

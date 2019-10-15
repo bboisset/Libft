@@ -14,12 +14,12 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str2;
+	char		*str2;
 	size_t	i;
-	int		j;
+	size_t	j;
 	size_t	max;
 
-	max = (len > ft_strlen(s) + 1) ? ft_strlen(s) + 1 : len;
+	max = (len > (size_t)ft_strlen(s) + 1) ? (size_t)ft_strlen(s) + 1 : len;
 	str2 = ft_calloc(max, sizeof(char));
 	if (!str2)
 		return (0);

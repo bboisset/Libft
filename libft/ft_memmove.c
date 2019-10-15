@@ -6,7 +6,7 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 16:41:17 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 20:13:45 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/15 13:14:23 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
-	{
 		while (i < len)
 		{
 			m[i] = l[i];
 			i++;
 		}
-	}
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:07:30 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 20:14:55 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/15 13:11:12 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		*str2;
+	char	*str2;
 	size_t	i;
 	size_t	j;
 	size_t	max;

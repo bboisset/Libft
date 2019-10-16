@@ -10,3 +10,4 @@ check ft_itoa ft_punbr_fd
 verifier strchr et strrchr
 split carac null
 atoi verifier nul 
+free split

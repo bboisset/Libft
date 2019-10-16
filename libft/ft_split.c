@@ -6,13 +6,13 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:12:23 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/14 20:10:19 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/16 17:44:55 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		count_occurences(char const *str, char c)
+static int	count_sep(char const *str, char c)
 {
 	int i;
 	int count;
@@ -25,45 +25,75 @@ static int		count_occurences(char const *str, char c)
 	return (count);
 }
 
-static int		ft_strcpy(char *dst, char const *src, size_t max)
+static int	ft_strlcpy(char *dest, const char *src, int size)
 {
-	size_t	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (src[i] != '\0' && i < max)
+	j = 0;
+	while (i + 1 < size && src[i])
 	{
-		dst[i] = src[i];
+		dest[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (i);
+	while (src[j] != '\0')
+	{
+		j++;
+	}
+	dest[i] = '\0';
+	return (j);
 }
 
-char			**ft_split(char const *s, char c)
+char		**prepare_array(char const *str, char c)
 {
 	int		i;
 	int		j;
-	int		k;
+	int		mem;
 	char	**array;
 
-	if (!(array = malloc((count_occurences(s, c) + 1) * sizeof(char *))))
-		return (0);
-	k = 0;
 	i = 0;
+	j = 0;
+	mem = 0;
+	if (!(array = ft_calloc((count_sep(str, c) + 2), sizeof(char *))))
+		return (0);
+	while (str[i] != '\0')
+	{
+		mem++;
+		if (str[i++] == c)
+		{
+			if (!(array[j++] = ft_calloc(mem, sizeof(char))))
+				return (0);
+			mem = 0;
+		}
+	}
+	if (!(array[j] = ft_calloc(mem, sizeof(char))))
+		return (0);
+	return (array);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	int		i;
+	int		j;
+	int		mem;
+	char	**array;
+
+	i = 0;
+	j = 0;
+	mem = 0;
+	array = prepare_array(s, c);
 	while (s[i] != '\0')
 	{
-		j = 0;
-		while (s[i] != c && s[i++] != '\0')
+		mem++;
+		if (s[i++] == c)
 		{
+			ft_strlcpy(array[j], s + i - mem, mem);
+			mem = 0;
 			j++;
-			i++;
 		}
-		if (!(array[k] = ft_calloc(j + 1, sizeof(char))))
-			return (0);
-		ft_strcpy(array[k], &s[i - j], j);
-		k++;
-		if (s[i] != '\0')
-			i++;
 	}
+	if (s[i] == '\0')
+		ft_strlcpy(array[j], s + i - mem, mem + 1);
 	return (array);
 }

@@ -6,7 +6,7 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:12:23 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/16 17:44:55 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/16 19:47:44 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,6 @@ static int	count_sep(char const *str, char c)
 		if (str[i++] == c)
 			count++;
 	return (count);
-}
-
-static int	ft_strlcpy(char *dest, const char *src, int size)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (i + 1 < size && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (src[j] != '\0')
-	{
-		j++;
-	}
-	dest[i] = '\0';
-	return (j);
 }
 
 char		**prepare_array(char const *str, char c)
@@ -67,7 +47,7 @@ char		**prepare_array(char const *str, char c)
 			mem = 0;
 		}
 	}
-	if (!(array[j] = ft_calloc(mem, sizeof(char))))
+	if (!(array[j] = ft_calloc(mem + 1, sizeof(char))))
 		return (0);
 	return (array);
 }

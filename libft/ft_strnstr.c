@@ -6,7 +6,7 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:30:41 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/15 13:13:12 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/16 23:24:06 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	int		needle_length;
+	size_t	needle_length;
 
 	i = 0;
 	needle_length = ft_strlen(needle);

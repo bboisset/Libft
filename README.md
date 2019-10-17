@@ -12,3 +12,4 @@ split carac \0
 atoi verifier nul 
 free split
 ft_putnbr si on envoie un string
+Calloc return en cas de malloc echoue

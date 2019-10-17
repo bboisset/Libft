@@ -14,3 +14,4 @@ free split
 ft_putnbr si on envoie un string
 Calloc return en cas de malloc echoue
 putnbr max int
+putendl plante sur null

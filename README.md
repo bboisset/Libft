@@ -8,6 +8,7 @@ règle clean
 strlcat est faux
 check ft_itoa ft_punbr_fd
 verifier strchr et strrchr
-split carac null
+split carac \0
 atoi verifier nul 
 free split
+ft_putnbr si on envoie un string

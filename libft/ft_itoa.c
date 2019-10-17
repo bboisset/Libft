@@ -39,7 +39,7 @@ char		*ft_itoa(int n)
 
 	i = ft_number_length(n);
 	if (!(str = ft_calloc(i + 1, sizeof(char))))
-		return (0);
+		return (NULL);
 	str[i--] = '\0';
 	if (n == 0)
 	{

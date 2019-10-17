@@ -12,21 +12,28 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+static char	*ft_strcpy(char *dst, const char *src)
 {
-	int		str_length;
-	int		i;
-	char	*str2;
+	size_t i;
 
-	str_length = ft_strlen(s1);
-	str2 = ft_calloc(str_length + 1, sizeof(char));
-	if (!str2)
-		return (0);
 	i = 0;
-	while (i <= str_length)
+	while (src[i])
 	{
-		str2[i] = s1[i];
+		dst[i] = src[i];
 		i++;
 	}
-	return (str2);
+	dst[i] = '\0';
+	return (dst);
+}
+
+char		*ft_strdup(const char *s1)
+{
+	size_t	s1_len;
+	char	*dest;
+
+	s1_len = ft_strlen(s1);
+	if (!(dest = (char *)malloc(sizeof(char) * s1_len + 1)))
+		return (NULL);
+	dest = ft_strcpy(dest, s1);
+	return (dest);
 }

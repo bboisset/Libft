@@ -18,11 +18,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	new_str = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	i = 0;
 	j = 0;
+	new_str = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
 	if (!new_str)
-		return (0);
+		return (NULL);
 	while (s1[j] != '\0')
 		new_str[i++] = s1[j++];
 	j = 0;

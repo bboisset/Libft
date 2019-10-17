@@ -12,68 +12,73 @@
 
 #include "libft.h"
 
-static int	count_sep(char const *str, char c)
+static int	count_words(char const *s, char sep)
 {
-	int i;
 	int count;
+	int i = 0;
 
-	i = 0;
 	count = 0;
-	while (str[i] != '\0')
-		if (str[i++] == c)
+	while (s[i] != '\0')
+	{
+		while (s[i] != '\0' && s[i] == sep)
+			i++;
+		if (s[i] != '\0' && s[i] != sep)
+		{
 			count++;
+			while (s[i] != '\0' && s[i] != sep)
+				i++;
+		}
+	}
 	return (count);
 }
 
-char		**prepare_array(char const *str, char c)
+static char	*prepare_string(char const *s, char c)
 {
+	char	*res;
 	int		i;
-	int		j;
-	int		mem;
-	char	**array;
 
 	i = 0;
-	j = 0;
-	mem = 0;
-	if (!(array = ft_calloc((count_sep(str, c) + 2), sizeof(char *))))
-		return (0);
-	while (str[i] != '\0')
+	while (s[i] && s[i] != c)
+		i++;
+	res = (char *)malloc(sizeof(char) * (i + 1));
+	if (res == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] && s[i] != c)
 	{
-		mem++;
-		if (str[i++] == c)
-		{
-			if (!(array[j++] = ft_calloc(mem, sizeof(char))))
-				return (0);
-			mem = 0;
-		}
+		res[i] = s[i];
+		i++;
 	}
-	if (!(array[j] = ft_calloc(mem + 1, sizeof(char))))
-		return (0);
-	return (array);
+	res[i] = '\0';
+	return (res);
 }
 
 char		**ft_split(char const *s, char c)
 {
+	char	**res;
 	int		i;
-	int		j;
-	int		mem;
-	char	**array;
+	int j;
 
 	i = 0;
 	j = 0;
-	mem = 0;
-	array = prepare_array(s, c);
-	while (s[i] != '\0')
+	res = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (res == NULL)
 	{
-		mem++;
-		if (s[i++] == c)
+		free(res);
+		return (NULL);
+	}
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			ft_strlcpy(array[j], s + i - mem, mem);
-			mem = 0;
-			j++;
+			res[i] = prepare_string(s, c);
+			i++;
+			while (*s && *s != c)
+				s++;
 		}
 	}
-	if (s[i] == '\0')
-		ft_strlcpy(array[j], s + i - mem, mem + 1);
-	return (array);
+	res[i] = NULL;
+	return (res);
 }

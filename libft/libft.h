@@ -6,7 +6,7 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 14:45:42 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/15 18:22:05 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/18 11:07:36 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-
-typedef struct		s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_bzero(void *s, size_t n);

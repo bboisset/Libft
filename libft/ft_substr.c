@@ -6,7 +6,7 @@
 /*   By: bboisset <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:07:30 by bboisset          #+#    #+#             */
-/*   Updated: 2019/10/16 15:50:27 by bboisset         ###   ########.fr       */
+/*   Updated: 2019/10/17 21:16:05 by bboisset         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str2;
-	size_t	i;
-	size_t	j;
-	size_t	max;
+	char		*str2;
+	size_t		i;
+	size_t		j;
+	size_t		max;
+	size_t		s_len;
 
-	max = (len > (size_t)ft_strlen(s) + 1) ? (size_t)ft_strlen(s) : len;
-	max = (start > max) ? 0 : max;
+	s_len = (size_t)ft_strlen(s);
+	max = (len > s_len + 1) ? s_len : len;
+	max = (start > s_len) ? 0 : max;
 	str2 = ft_calloc(max + 1, sizeof(char));
 	if (!str2)
 		return (0);

@@ -6,19 +6,11 @@
 #    By: bboisset <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 17:54:40 by bboisset          #+#    #+#              #
-#    Updated: 2019/10/15 17:48:29 by bboisset         ###   ########.fr        #
+#    Updated: 2019/10/18 11:13:06 by bboisset         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= cc
-
-GFLAGS	= -Wall -Wextra -Werror
-
-OBJS	= $(SRCS:.c=.o) 
-
 NAME	= libft.a
-
-RM		= rm -f
 
 SRCS	= 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 			ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c \
@@ -29,13 +21,19 @@ SRCS	= 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 			ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-SRCSBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-			ft_lstadd_back.c 
+OBJS	= $(SRCS:.c=.o) 
+
+CC		= gcc
+
+GFLAGS	= -Wall -Wextra -Werror
+
+RM		= rm -f
 
 all: $(NAME)
 
+
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+		ar -rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(GFLAGS) -c $< -o $@
@@ -48,5 +46,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all $(NAME) fclean re
-
+.PHONY: all fclean re

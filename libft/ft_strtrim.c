@@ -40,7 +40,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	while (is_in_set(s1[i - 1], set) && i > to_rm)
 		i--;
 	j = i - to_rm;
-	str = ft_calloc(j + 1, sizeof(char));
+	if(!(str = ft_calloc(j + 1, sizeof(char))))
+		return (NULL);
 	j--;
 	i--;
 	while (j + 1 > 0)
